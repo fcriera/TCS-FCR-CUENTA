@@ -1,9 +1,15 @@
 package com.frc.data;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.Optional;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.frc.model.Cuenta;
 import com.frc.model.Movimiento;
 
-public interface MovimientoRepository extends CrudRepository<Movimiento, Long> {
+public interface MovimientoRepository extends JpaRepository<Movimiento, Long> {
+	Movimiento findFirstByCuentaOrderByFechaDesc(Cuenta cuenta);
 
+	Movimiento findFirstByCuentaOrderByFechaDesc(Optional<Cuenta> cuenta);
 }
+

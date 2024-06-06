@@ -1,10 +1,5 @@
 package com.frc.model;
 
-
-import org.springframework.web.bind.annotation.GetMapping;
-
-import com.lm2a.model.Taco;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

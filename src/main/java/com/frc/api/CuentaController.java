@@ -32,18 +32,18 @@ public class CuentaController {
 		return null;
 	}
 	
-	@PostMapping(path="/", consumes="application/json")
+	@PostMapping(path="", consumes="application/json")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Cuenta createCuenta(@RequestBody Cuenta cuenta) {
 		return cuentaRepo.save(cuenta);
 	}
 	
-	@GetMapping("/")
+	@GetMapping("")
 	public Iterable<Cuenta> allCuentas(){
 		return cuentaRepo.findAll();
 	}
 	
-	@PutMapping("/")
+	@PutMapping("")
 	public Cuenta updateCuenta(@RequestBody Cuenta cuenta) {
 		return cuentaRepo.save(cuenta);
 	}

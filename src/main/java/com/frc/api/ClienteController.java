@@ -32,18 +32,18 @@ public class ClienteController {
 		return null;
 	}
 	
-	@PostMapping(path="/", consumes="application/json")
+	@PostMapping(path="", consumes="application/json")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Cliente createCliente(@RequestBody Cliente cliente) {
 		return clienteRepo.save(cliente);
 	}
 	
-	@GetMapping("/")
+	@GetMapping("")
 	public Iterable<Cliente> allClientes(){
 		return clienteRepo.findAll();
 	}
 	
-	@PutMapping("/")
+	@PutMapping("")
 	public Cliente updateCliente(@RequestBody Cliente cliente) {
 		return clienteRepo.save(cliente);
 	}
