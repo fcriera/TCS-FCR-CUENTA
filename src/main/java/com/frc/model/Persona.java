@@ -4,9 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
+
 
 @Data
 @Entity
@@ -19,12 +21,21 @@ public class Persona {
 	@NotEmpty(message="El genero es obligatorio")
 	private String genero;
 	@NotEmpty(message="La edad es obligatoria")
-	private String edad;
-	@Digits(integer=10, fraction=0, message="ID invalida")
-	private int identificacion;
+	private int edad;
+	@NotEmpty(message="La identificacion es obligatoria")
+	private String identificacion;
 	@NotEmpty(message="La direccion es obligatoria")
 	private String direccion;
-	@Digits(integer=9, fraction=0, message="Numero telefonico invalido")
-	private int telefono;
+	@NotEmpty(message="El telefono es obligatorio")
+	private String telefono;
+	
+	public Persona(String nombre, String genero, int edad, String identificacion, String direccion, String telefono) {
+        this.nombre = nombre;
+        this.genero = genero;
+        this.edad = edad;
+        this.identificacion = identificacion;
+        this.direccion = direccion;
+        this.telefono = telefono;
+    }
 }
 
